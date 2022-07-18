@@ -6,6 +6,7 @@ import (
 	"io"
 	"net/url"
 	"os"
+	"strings"
 )
 
 func main() {
@@ -20,6 +21,6 @@ ReadLoop:
 		if err != nil {
 			panic(err)
 		}
-		fmt.Println(url.QueryEscape(line))
+		fmt.Println(url.QueryEscape(strings.TrimRight(line, "\n")))
 	}
 }
